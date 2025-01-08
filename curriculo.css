@@ -1,79 +1,141 @@
-/* Melhorando a aparência para impressão */
-@media print {
-    body {
-        background-color: white;
-        color: black;
-    }
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Layout geral */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 20px auto;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.sidebar {
+    background: #b22222; /* Vermelho forte */
+    color: white;
+    flex: 1 1 300px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.foto-perfil {
+    width: 150px;
+    height: 150px;
+    border-radius: 10%; /* Quadrado com bordas levemente arredondadas */
+    border: 3px solid white;
+    margin-bottom: 20px;
+    object-fit: cover; /* Ajusta a imagem para caber no quadrado */
+}
+
+h3 {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: white;
+    text-align: left;
+    width: 100%;
+}
+
+.info span {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.info a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.info a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    width: 80%;
+    border: 0.5px solid white;
+    margin: 20px 0;
+}
+
+.conteudo {
+    flex: 3 1 600px;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #b22222; /* Vermelho */
+}
+
+header p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #b22222;
+    display: inline-block;
+    padding-bottom: 5px;
+    color: #b22222;
+}
+
+ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
     .container {
-        display: flex;
-        flex-direction: column; /* Coloca o layout em coluna ao imprimir */
-        margin: 0;
+        flex-direction: column;
     }
 
     .sidebar {
-        background: #b22222; /* Muda o fundo para o vermelho mais forte */
-        color: white;
+        text-align: left;
         padding: 20px;
-        flex: 1;
-    }
-
-    .foto-perfil {
-        width: 150px;
-        height: 150px;
-        border-radius: 10%;
-        margin-bottom: 20px;
-    }
-
-    .info {
-        margin-bottom: 15px;
-        font-size: 0.9rem;
-    }
-
-    hr {
-        border: 0;
-        border-top: 1px solid #b22222; /* Usando a cor do fundo */
-        width: 80%;
-        margin: 10px 0;
     }
 
     .conteudo {
         padding: 20px;
-        flex: 3;
-    }
-
-    /* Ajusta o tamanho e estilo dos links para impressão */
-    .info a {
-        color: white;
-        text-decoration: none;
-    }
-
-    .info a:hover {
-        text-decoration: underline;
-    }
-
-    header h1,
-    header p {
-        color: #b22222; /* Aplica o vermelho também nos títulos */
-    }
-
-    h2 {
-        color: #b22222;
-    }
-
-    ul li {
-        color: #333;
-    }
-
-    /* Melhorando o layout do conteúdo */
-    .container {
-        margin: 20px auto;
-        width: 100%;
-    }
-
-    /* Remover a sombra e bordas para um visual mais limpo */
-    .container {
-        box-shadow: none;
-        border: none;
     }
 }

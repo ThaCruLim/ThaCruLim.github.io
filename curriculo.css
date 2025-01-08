@@ -1,114 +1,122 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: lightblue;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
 }
 
-h3{
-    font-family: Adale Mono, monospace;
+/* Layout geral */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 20px auto;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-.Principal{
-background-color: white;
-margin: 0 200px 0 200px;
-height: auto;
-display: grid;
-grid-template-columns: 1fr 60%;
-}
-
-.lado_esquerdo{
-    background-color: #355586;
-    border: 2px solid white;
-}
-
-.lado_direito {
-    border: 2px solid #355586;
-}
-
-
-.foto_perfil{
-    margin: 50px -10px 50px 110px;
-    border-radius: 50%;
-    justify-content: center;
-    border: 1px solid white;
-}
-
-.titulo_contato{
+.sidebar {
+    background: #355586;
     color: white;
+    flex: 1 1 300px;
+    padding: 20px;
     text-align: center;
+}
+
+.foto-perfil {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 20px auto;
+    border: 3px solid white;
+}
+
+h3 {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 10px;
     text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.1rem;
 }
 
-.material-icons.icone_branco{
-    color: white;
+.info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
 }
 
-.bloco_informação{
-display: flex;
-flex-direction: row;
-margin-left: 35px;
-margin-bottom: 16px;
-width: 100%;
-align-items: center;
-}
-
-.descrição{
-    font-size: 16px;
-    color: white;
-    font-weight: 600;
-    font-family: adele mono, monospace;
-    margin-left: 16px;
-}
-
-.name{
-    font-size: 40px;
-    color: black;
-    font-weight: 600;
-    font-family: 'Times New Roman', Times, serif;
-    margin-left: 16px;
-    text-decoration: underline;
-}
-
-.name2{
-    font-size: 25px;
-    color: black;
-    font-weight: 200;
-    font-family: 'Times New Roman', Times, serif;
-    margin-left: 20px;
-}
-
-.line{
-    color: #355586;
-    border: 2px solid;
-}
-
-.linkedin{
-    color: white;
-}
-
-.sub{
-    margin-left: 20px;
-}
-
-.escolaridade{
-    font-size: 17px;
-    color: black;
-    font-weight: 300;
-    font-family: 'Times New Roman', Times, serif;
-    margin-left: 18px;
-}
-
-.profissional{
-    font-size: 17px;
-    color: black;
-    font-weight: 300;
-    font-family: 'Times New Roman', Times, serif;
-    margin-left: 18px;
-}
-
-.sub2{
-    font-size: 20px;
-    color: black;
-    font-weight: 600;
-    font-family: 'Times New Roman', Times, serif;
+.info span {
     margin-left: 10px;
-    text-decoration: underline;
+}
+
+.info a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.conteudo {
+    flex: 3 1 600px;
+    padding: 20px 40px;
+}
+
+header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #355586;
+    display: inline-block;
+    padding-bottom: 5px;
+    color: #355586;
+}
+
+ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        text-align: left;
+        padding: 20px;
+    }
+
+    .conteudo {
+        padding: 20px;
+    }
 }
